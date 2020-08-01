@@ -1,11 +1,13 @@
 import Email, { EmailOptions } from 'email-templates';
 import nodemailer from 'nodemailer';
 import Mail from 'nodemailer/lib/mailer';
+import { singleton } from '@keenondrums/singleton';
 
 import { IMailProvider, IMessage } from '../IMailProvider';
 
 import config from '@config';
 
+@singleton
 export class SMTPMailProvider<Context> implements IMailProvider<Context> {
   private transporter: Mail;
 
