@@ -101,4 +101,4 @@ public
 dist/
 
 # TypeORM config
-ormconfig.json
+ormconfig.js
