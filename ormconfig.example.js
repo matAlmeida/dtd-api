@@ -7,7 +7,6 @@ module.exports = {
   username: "postgres",
   password: "password",
   database: DATABASE || "ilab_dev",
-  synchronize: "all",
   logging: [
     "error"
   ],
