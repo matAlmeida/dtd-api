@@ -26,6 +26,12 @@ export class User {
   @Column({ nullable: false })
   public password_salt: string;
 
+  @Column({ nullable: true })
+  public password_reset_token: string;
+
+  @Column({ nullable: true })
+  public password_reset_expire: Date;
+
   constructor(props: Omit<User, 'id'>, id?: string) {
     Object.assign(this, props);
 
