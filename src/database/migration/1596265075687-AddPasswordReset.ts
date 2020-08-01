@@ -13,7 +13,7 @@ export class AddPasswordReset1596265075687 implements MigrationInterface {
       new TableColumn(
         {
           name: 'password_reset_expire',
-          type: 'date',
+          type: 'timestamp',
           isNullable: true
         }
       )
@@ -21,7 +21,7 @@ export class AddPasswordReset1596265075687 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropColumns('users', [
+    await queryRunner.dropColumns('user', [
       new TableColumn(
         {
           name: 'password_reset_token',
@@ -32,7 +32,7 @@ export class AddPasswordReset1596265075687 implements MigrationInterface {
       new TableColumn(
         {
           name: 'password_reset_expire',
-          type: 'date',
+          type: 'timestamp',
           isNullable: true
         }
       )
