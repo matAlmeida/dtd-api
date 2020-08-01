@@ -19,7 +19,7 @@ export class AuthenticateUserUseCase
   async execute(data: IAuthenticateUserRequestDTO) {
     const user = await this.userRepository.findByEmail(data.email);
 
-    if (user === null) {
+    if (!user) {
       throw new UnauthorizedError('Invalid credentials');
     }
 
