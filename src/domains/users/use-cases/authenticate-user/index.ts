@@ -1,12 +1,12 @@
-import { InMemoryUserRepository } from '@domains/users/repositories/implementations/InMemoryUsersRepository';
+import { DatabaseUserRepository } from '@domains/users/repositories/implementations/DatabaseUserRepository';
 
 import { AuthenticateUserUseCase } from './authenticate-user.usecase';
 import { AuthenticateUserController } from './authenticate-user.controller';
 
-const inMemoryUserRepository = new InMemoryUserRepository();
+const databaseUserRepository = new DatabaseUserRepository();
 
 const authenticateUserUseCase = new AuthenticateUserUseCase(
-  inMemoryUserRepository
+  databaseUserRepository
 );
 
 const authenticateUserController = new AuthenticateUserController(

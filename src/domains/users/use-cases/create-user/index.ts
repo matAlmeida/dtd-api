@@ -1,11 +1,11 @@
-import { InMemoryUserRepository } from '@domains/users/repositories/implementations/InMemoryUsersRepository';
+import { DatabaseUserRepository } from '@domains/users/repositories/implementations/DatabaseUserRepository';
 
 import { CreateUserUseCase } from './create-user.usecase';
 import { CreateUserController } from './create-user.controller';
 
-const inMemoryUserRepository = new InMemoryUserRepository();
+const databaseUserRepository = new DatabaseUserRepository();
 
-const createUserUseCase = new CreateUserUseCase(inMemoryUserRepository);
+const createUserUseCase = new CreateUserUseCase(databaseUserRepository);
 
 const createUserController = new CreateUserController(createUserUseCase);
 
