@@ -1,11 +1,29 @@
 import { uuid } from 'uuidv4';
+import { Entity, Column, Index } from 'typeorm';
 
+@Entity('user')
+@Index('idx_user_email', ['email'], { unique: true })
 export class User {
+  @Column({
+    primary: true,
+    nullable: false,
+    type: 'uuid'
+  })
   public readonly id: string;
 
+  @Column()
   public name: string;
+
+  @Column({
+    nullable: false,
+    unique: true
+  })
   public email: string;
+
+  @Column({ nullable: false })
   public password: string;
+
+  @Column({ nullable: false })
   public password_salt: string;
 
   constructor(props: Omit<User, 'id'>, id?: string) {
