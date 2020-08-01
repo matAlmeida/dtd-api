@@ -30,12 +30,15 @@
       "@config/*": [
         "./src/config/*"
       ],
+      "@config": [
+        "./src/config"
+      ],
       "@domains/*": [
         "./src/domains/*"
       ],
       "@libs/*": [
         "./src/libs/*"
-      ]
+      ],
     }
   },
   "include": [
