@@ -7,10 +7,11 @@ dotenv.config();
 const env = {
   PORT: process.env.PORT,
   API_JWT_KEY: process.env.API_JWT_KEY,
-  API_MASTER_KEY: process.env.API_MASTER_KEY,
-  API_MASTER_EMAIL: process.env.API_MASTER_EMAIL,
-  API_MASTER_NAME: process.env.API_MASTER_NAME,
-  SMTP_URL: process.env.SMTP_URL
+  PGHOST: process.env.PGHOST,
+  PGUSER: process.env.PGUSER,
+  PGDATABASE: process.env.PGDATABASE,
+  PGPASSWORD: process.env.PGPASSWORD,
+  PGPORT: process.env.PGPORT
 };
 
 export default {
