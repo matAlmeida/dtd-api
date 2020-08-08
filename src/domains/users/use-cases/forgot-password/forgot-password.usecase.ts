@@ -4,7 +4,7 @@ import path from 'path';
 import { BadRequestError } from '@models/error';
 import { IBaseUseCase } from '@models/usecase';
 
-import { IMailProvider } from '@domains/core/providers/IMailProvider';
+import { IMailProvider } from '@domains/core/providers/MailProvider/IMailProvider';
 import { IUsersRepository } from '@domains/users/repositories/IUsersRepository';
 
 import { IForgotPasswordRequestDTO } from './forgot-password.dto';
