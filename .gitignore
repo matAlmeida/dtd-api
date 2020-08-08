@@ -99,6 +99,3 @@ public
 
 # Builded files
 dist/
-
-# TypeORM config
-ormconfig.js
