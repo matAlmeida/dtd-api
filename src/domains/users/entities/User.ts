@@ -41,6 +41,8 @@ export class User {
 
     if (!id) {
       this.id = uuid();
+    } else {
+      this.id = id;
     }
   }
 }
