@@ -10,8 +10,8 @@ import { ICreateUserRequestDTO } from './create-user.dto';
 
 const SALT_ROUNDS = 10;
 
-export class CreateUserUseCase
-  implements IBaseUseCase<ICreateUserRequestDTO, void> {
+export class CreateUserUseCase implements
+  IBaseUseCase<ICreateUserRequestDTO, void> {
   constructor(private usersRepository: IUsersRepository) { }
 
   async execute(data: ICreateUserRequestDTO) {

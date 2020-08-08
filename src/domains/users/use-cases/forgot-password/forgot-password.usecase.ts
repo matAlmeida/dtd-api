@@ -10,8 +10,8 @@ import { IUsersRepository } from '@domains/users/repositories/IUsersRepository';
 import { IForgotPasswordRequestDTO } from './forgot-password.dto';
 import { ForgotPasswordContext } from '../../mail/forgot_password/forgot_password.context';
 
-export class ForgotPasswordUseCase
-  implements IBaseUseCase<IForgotPasswordRequestDTO, void> {
+export class ForgotPasswordUseCase implements
+  IBaseUseCase<IForgotPasswordRequestDTO, void> {
   constructor(private usersRepository: IUsersRepository, private mailProvider: IMailProvider<ForgotPasswordContext>) { }
 
   async execute(data: IForgotPasswordRequestDTO) {

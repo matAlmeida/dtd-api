@@ -11,8 +11,7 @@ import {
   ISessionParams
 } from './authenticate-user.dto';
 
-export class AuthenticateUserUseCase
-  implements
+export class AuthenticateUserUseCase implements
   IBaseUseCase<IAuthenticateUserRequestDTO, IAuthenticateUserResponseDTO> {
   constructor(private userRepository: IUsersRepository) { }
 
