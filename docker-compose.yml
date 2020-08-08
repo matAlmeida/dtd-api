@@ -17,6 +17,17 @@ services:
     volumes:
       - postgres:/var/lib/postgres
 
+  db_test:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: ilab_test
+      POSTGRES_PASSWORD: password
+    ports:
+      - 5433:5432
+    volumes:
+      - postgres:/var/lib/postgres
+
   redis:
     image: redis:5.0.9-buster
     command: ["redis-server", "--appendonly", "yes"]
