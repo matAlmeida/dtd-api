@@ -13,10 +13,10 @@ import {
 
 export class AuthenticateUserUseCase implements
   IBaseUseCase<IAuthenticateUserRequestDTO, IAuthenticateUserResponseDTO> {
-  constructor(private userRepository: IUsersRepository) { }
+  constructor(private usersRepository: IUsersRepository) { }
 
   async execute(data: IAuthenticateUserRequestDTO) {
-    const user = await this.userRepository.findByEmail(data.email);
+    const user = await this.usersRepository.findByEmail(data.email);
 
     if (!user) {
       throw new UnauthorizedError('Invalid credentials');
