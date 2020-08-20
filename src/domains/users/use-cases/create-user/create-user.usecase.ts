@@ -3,8 +3,8 @@ import bcrypt from 'bcrypt';
 import { BadRequestError } from '@models/error';
 import { IBaseUseCase } from '@models/usecase';
 
-import { IUsersRepository } from '@domains/users/repositories/IUsersRepository';
 import { User } from '@domains/users/entities/User';
+import { IUsersRepository } from '@domains/users/repositories/IUsersRepository';
 
 import { ICreateUserRequestDTO } from './create-user.dto';
 

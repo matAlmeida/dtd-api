@@ -1,8 +1,8 @@
-import { DatabaseUserRepository } from '@domains/users/repositories/implementations/DatabaseUserRepository';
 import { SMTPMailProvider } from '@domains/core/providers/MailProvider/implementations/SMTPMailProvider';
+import { DatabaseUserRepository } from '@domains/users/repositories/implementations/DatabaseUserRepository';
 
-import { ForgotPasswordUseCase } from './forgot-password.usecase';
 import { ForgotPasswordController } from './forgot-password.controller';
+import { ForgotPasswordUseCase } from './forgot-password.usecase';
 
 const databaseUserRepository = new DatabaseUserRepository();
 const smtpMailProvider = new SMTPMailProvider();

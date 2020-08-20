@@ -1,8 +1,10 @@
 import bcrypt from 'bcrypt';
 
+import { generateToken } from '@libs/jwt';
+
 import { UnauthorizedError } from '@models/error';
 import { IBaseUseCase } from '@models/usecase';
-import { generateToken } from '@libs/jwt';
+
 import { IUsersRepository } from '@domains/users/repositories/IUsersRepository';
 
 import {

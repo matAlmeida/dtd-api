@@ -1,7 +1,6 @@
 import { singleton } from '@keenondrums/singleton';
 
 import { User } from '../../entities/User';
-
 import { IUsersRepository } from '../IUsersRepository';
 
 const InMemoryUers: User[] = [];

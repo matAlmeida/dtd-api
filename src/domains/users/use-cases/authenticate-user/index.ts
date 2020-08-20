@@ -1,7 +1,7 @@
 import { DatabaseUserRepository } from '@domains/users/repositories/implementations/DatabaseUserRepository';
 
-import { AuthenticateUserUseCase } from './authenticate-user.usecase';
 import { AuthenticateUserController } from './authenticate-user.controller';
+import { AuthenticateUserUseCase } from './authenticate-user.usecase';
 
 const databaseUserRepository = new DatabaseUserRepository();
 

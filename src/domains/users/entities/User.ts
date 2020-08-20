@@ -1,5 +1,6 @@
-import { uuid } from 'uuidv4';
 import { Entity, Column, Index, OneToMany } from 'typeorm';
+import { uuid } from 'uuidv4';
+
 import { Team } from '../../teams/entities/Team';
 
 @Entity('user')

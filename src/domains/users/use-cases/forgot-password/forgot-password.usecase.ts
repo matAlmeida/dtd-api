@@ -7,8 +7,8 @@ import { IBaseUseCase } from '@models/usecase';
 import { IMailProvider } from '@domains/core/providers/MailProvider/IMailProvider';
 import { IUsersRepository } from '@domains/users/repositories/IUsersRepository';
 
-import { IForgotPasswordRequestDTO } from './forgot-password.dto';
 import { ForgotPasswordContext } from '../../mail/forgot_password/forgot_password.context';
+import { IForgotPasswordRequestDTO } from './forgot-password.dto';
 
 export class ForgotPasswordUseCase implements
   IBaseUseCase<IForgotPasswordRequestDTO, void> {

@@ -4,7 +4,6 @@ import { createConnection, Repository } from 'typeorm';
 import { Pagination } from '@domains/core/entities/Pagination';
 
 import { User } from '../../entities/User';
-
 import { IUsersRepository } from '../IUsersRepository';
 
 @singleton
