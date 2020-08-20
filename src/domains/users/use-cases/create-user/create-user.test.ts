@@ -1,5 +1,7 @@
 import { getConnection, createConnection } from 'typeorm';
 
+import { dropDatabase } from '@libs/test-utils';
+
 import { DatabaseUserRepository } from '@domains/users/repositories/implementations/DatabaseUserRepository';
 
 import { createUserUseCase } from './index';
@@ -10,16 +12,6 @@ const testUser = {
   name: 'Matheus',
   email: 'email@email.com',
   password: 'senha123'
-};
-
-const dropDatabase = async () => {
-  const connection = getConnection();
-  const entities = connection.entityMetadatas;
-
-  await Promise.all(entities.map(async (entity) => {
-    const repository = connection.getRepository(entity.name);
-    await repository.query(`DELETE FROM "${entity.tableName}"`);
-  }));
 };
 
 beforeAll(async () => {
