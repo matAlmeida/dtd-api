@@ -17,6 +17,8 @@ module.exports = {
     '/coverage/',
     '/database/',
     '/config/',
+    '/libs/',
+    '/models\/error/',
     '.*\.controller\.ts',
   ],
   coverageThreshold: {
