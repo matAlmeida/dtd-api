@@ -26,7 +26,6 @@ afterAll(async () => {
 
 beforeEach(async () => {
   await dropDatabase();
-  await createUserUseCase.execute(testUser);
 });
 
 describe('Authenticate User [Use Case]', () => {
@@ -35,7 +34,7 @@ describe('Authenticate User [Use Case]', () => {
 
     try {
       await authenticateUserUseCase.execute({
-        email: `invalid-${testUser.email}`,
+        email: testUser.email,
         password: testUser.password
       });
     } catch (error) {
@@ -46,6 +45,7 @@ describe('Authenticate User [Use Case]', () => {
 
   test('should fail if invalid password', async () => {
     expect.assertions(2);
+    await createUserUseCase.execute(testUser);
 
     try {
       await authenticateUserUseCase.execute({
@@ -59,6 +59,8 @@ describe('Authenticate User [Use Case]', () => {
   });
 
   test('should return authenticated user if valid credentials', async () => {
+    await createUserUseCase.execute(testUser);
+
     const authenticatedUser = await authenticateUserUseCase.execute({
       email: testUser.email,
       password: testUser.password
