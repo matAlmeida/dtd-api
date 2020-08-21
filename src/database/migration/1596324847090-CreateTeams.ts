@@ -36,10 +36,10 @@ export class CreateTeams1596324847090 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    const table = await queryRunner.getTable('user');
+    const table = await queryRunner.getTable('team');
     const foreignKey = table.foreignKeys.find(fk => fk.columnNames.indexOf('userId') !== -1);
-    await queryRunner.dropColumn('team', 'userId');
     await queryRunner.dropForeignKey('team', foreignKey);
+    await queryRunner.dropColumn('team', 'userId');
     await queryRunner.dropTable('team', true);
   }
 }
