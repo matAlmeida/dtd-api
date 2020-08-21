@@ -33,7 +33,7 @@ const databaseConfig = {
     username: "postgres",
     password: "password",
     database: "ilab_test",
-    logging: false,
+    logging: ['error'],
     migrationsRun: true,
     entities: [
       "./src/domains/**/entities/*.ts"
