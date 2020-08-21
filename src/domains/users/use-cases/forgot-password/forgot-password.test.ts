@@ -17,7 +17,7 @@ const MockedEmail = mocked(Email, true);
 
 const testUser = {
   name: 'Matheus',
-  email: 'email@email.com',
+  email: 'forgot-email@email.com',
   password: 'senha123'
 };
 

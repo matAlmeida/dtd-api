@@ -12,7 +12,7 @@ const userRepository = new DatabaseUserRepository();
 
 const testUser = {
   name: 'Matheus',
-  email: 'email@email.com',
+  email: 'create-email@email.com',
   password: 'senha123'
 };
 
