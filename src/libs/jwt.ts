@@ -1,13 +1,13 @@
-import jwt from "jsonwebtoken";
+import jwt from 'jsonwebtoken';
 
-import config from "../config";
+import config from '../config';
 
 export function generateToken(
   params: string | object | Buffer = {},
-  expiration: string | number = "7 days"
+  expiration: string | number = '7 days'
 ) {
   return jwt.sign(params, config.env.API_JWT_KEY, {
-    expiresIn: expiration,
+    expiresIn: expiration
   });
 }
 
