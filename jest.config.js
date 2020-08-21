@@ -19,6 +19,7 @@ module.exports = {
     '/config/',
     '/libs/',
     '/models\/error/',
+    '/models\/usecase/',
     '.*\.controller\.ts',
   ],
   coverageThreshold: {
