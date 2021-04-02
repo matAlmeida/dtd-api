@@ -10,7 +10,9 @@
     "start": "node dist/server.js",
     "dev": "NODE_ENV=development ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules --no-notify src/server.ts",
     "test": "NODE_ENV=test jest ./src",
-    "coverage": "NODE_ENV=test jest ./src --collectCoverage"
+    "coverage": "NODE_ENV=test jest ./src --collectCoverage",
+    "postinstall": "husky install",
+    "lint": "prettier --loglevel error --check src && eslint src/**/*.ts"
   },
   "dependencies": {
     "@keenondrums/singleton": "^1.0.0",
@@ -19,6 +21,7 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "email-templates": "^7.1.0",
+    "eslint-config-prettier": "^8.1.0",
     "express": "^4.17.1",
     "glob": "^7.1.6",
     "helmet": "^3.23.3",
@@ -60,8 +63,10 @@
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-import-helpers": "^1.1.0",
     "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
+    "husky": "^6.0.0",
     "jest": "^26.2.2",
     "prettier": "^2.0.5",
     "ts-jest": "^26.1.4",

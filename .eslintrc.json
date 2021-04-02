@@ -4,13 +4,19 @@
     "node": true,
     "jest": true
   },
-  "extends": ["standard"],
+  "extends": [
+    "standard"
+  ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 11,
     "sourceType": "module"
   },
-  "plugins": ["@typescript-eslint", "eslint-plugin-import-helpers", "prettier"],
+  "plugins": [
+    "@typescript-eslint",
+    "eslint-plugin-import-helpers",
+    "prettier"
+  ],
   "rules": {
     "quotes": [
       "error",
@@ -34,9 +40,27 @@
     "radix": "off",
     "consistent-return": "off",
     "no-underscore-dangle": "off",
-    "no-var": ["error"],
-    "semi": ["error", "always"],
-    "comma-dangle": ["error", "always-multiline"],
+    "no-var": [
+      "error"
+    ],
+    "semi": [
+      "error",
+      "always"
+    ],
+    "array-element-newline": [
+      "error",
+      "consistent"
+    ],
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "always-multiline",
+        "functions": "never"
+      }
+    ],
     "no-nested-ternary": "off",
     "@typescript-eslint/no-unused-vars": [
       2,
@@ -54,7 +78,11 @@
           "/^@config/",
           "/^@models/",
           "/^@domains/",
-          ["parent", "sibling", "index"]
+          [
+            "parent",
+            "sibling",
+            "index"
+          ]
         ],
         "alphabetize": {
           "order": "asc",

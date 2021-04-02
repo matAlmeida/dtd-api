@@ -11,7 +11,7 @@ import { ForgotPasswordContext } from '../../mail/forgot_password/forgot_passwor
 import { IForgotPasswordRequestDTO } from './forgot-password.dto';
 
 export class ForgotPasswordUseCase
-  implements IBaseUseCase<IForgotPasswordRequestDTO, void> {
+implements IBaseUseCase<IForgotPasswordRequestDTO, void> {
   constructor(
     private usersRepository: IUsersRepository,
     private mailProvider: IMailProvider<ForgotPasswordContext>
