@@ -7,6 +7,8 @@ const databaseUserRepository = new DatabaseUserRepository();
 
 const resetPasswordUseCase = new ResetPasswordUseCase(databaseUserRepository);
 
-const resetPasswordController = new ResetPasswordController(resetPasswordUseCase);
+const resetPasswordController = new ResetPasswordController(
+  resetPasswordUseCase
+);
 
 export { resetPasswordUseCase, resetPasswordController };

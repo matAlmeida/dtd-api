@@ -10,12 +10,13 @@ import { IUsersRepository } from '@domains/users/repositories/IUsersRepository';
 import {
   IAuthenticateUserRequestDTO,
   IAuthenticateUserResponseDTO,
-  ISessionParams
+  ISessionParams,
 } from './authenticate-user.dto';
 
-export class AuthenticateUserUseCase implements
-  IBaseUseCase<IAuthenticateUserRequestDTO, IAuthenticateUserResponseDTO> {
-  constructor(private usersRepository: IUsersRepository) { }
+export class AuthenticateUserUseCase
+  implements
+    IBaseUseCase<IAuthenticateUserRequestDTO, IAuthenticateUserResponseDTO> {
+  constructor(private usersRepository: IUsersRepository) {}
 
   async execute(data: IAuthenticateUserRequestDTO) {
     const user = await this.usersRepository.findByEmail(data.email);
@@ -37,7 +38,7 @@ export class AuthenticateUserUseCase implements
       id: user.id,
       name: user.name,
       email: user.email,
-      session_token: sessionToken
+      session_token: sessionToken,
     };
 
     return publicUser;

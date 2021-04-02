@@ -9,9 +9,9 @@ import { IResetPasswordRequestDTO } from './reset-password.dto';
 
 const SALT_ROUNDS = 10;
 
-export class ResetPasswordUseCase implements
-  IBaseUseCase<IResetPasswordRequestDTO, void> {
-  constructor(private usersRepository: IUsersRepository) { }
+export class ResetPasswordUseCase
+  implements IBaseUseCase<IResetPasswordRequestDTO, void> {
+  constructor(private usersRepository: IUsersRepository) {}
 
   async execute(data: IResetPasswordRequestDTO) {
     const user = await this.usersRepository.findByEmail(data.email);
@@ -32,6 +32,11 @@ export class ResetPasswordUseCase implements
     const passwordSalt = await bcrypt.genSalt(SALT_ROUNDS);
     const hashedPassword = await bcrypt.hash(data.password, passwordSalt);
 
-    await this.usersRepository.save({ ...user, password: hashedPassword, password_reset_token: null, password_reset_expire: null });
+    await this.usersRepository.save({
+      ...user,
+      password: hashedPassword,
+      password_reset_token: null,
+      password_reset_expire: null,
+    });
   }
 }

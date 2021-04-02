@@ -6,67 +6,51 @@ const PGPORT = process.env.PGPORT;
 
 const databaseConfig = {
   development: {
-    type: "postgres",
-    host: "localhost",
+    type: 'postgres',
+    host: 'localhost',
     port: 5432,
-    username: "postgres",
-    password: "password",
-    database: "ilab_dev",
-    logging: [
-      "error"
-    ],
-    entities: [
-      "./src/domains/**/entities/*.ts"
-    ],
-    migrations: [
-      "./src/database/migration/**/*.ts"
-    ],
+    username: 'postgres',
+    password: 'password',
+    database: 'ilab_dev',
+    logging: ['error'],
+    entities: ['./src/domains/**/entities/*.ts'],
+    migrations: ['./src/database/migration/**/*.ts'],
     cli: {
-      "entitiesDir": "src/domains",
-      "migrationsDir": "src/database/migration"
-    }
+      entitiesDir: 'src/domains',
+      migrationsDir: 'src/database/migration',
+    },
   },
   test: {
-    type: "postgres",
-    host: "localhost",
+    type: 'postgres',
+    host: 'localhost',
     port: 5433,
-    username: "postgres",
-    password: "password",
-    database: "ilab_test",
+    username: 'postgres',
+    password: 'password',
+    database: 'ilab_test',
     logging: ['error'],
     migrationsRun: true,
-    entities: [
-      "./src/domains/**/entities/*.ts"
-    ],
-    migrations: [
-      "./src/database/migration/**/*.ts"
-    ],
+    entities: ['./src/domains/**/entities/*.ts'],
+    migrations: ['./src/database/migration/**/*.ts'],
     cli: {
-      "entitiesDir": "src/domains",
-      "migrationsDir": "src/database/migration"
-    }
+      entitiesDir: 'src/domains',
+      migrationsDir: 'src/database/migration',
+    },
   },
   production: {
-    type: "postgres",
+    type: 'postgres',
     host: PGHOST,
     port: PGPORT,
     username: PGUSER,
     password: PGPASSWORD,
     database: PGDATABASE,
-    logging: [
-      "error"
-    ],
-    entities: [
-      "./src/domains/**/entities/*.ts"
-    ],
-    migrations: [
-      "./src/database/migration/**/*.ts"
-    ],
+    logging: ['error'],
+    entities: ['./src/domains/**/entities/*.ts'],
+    migrations: ['./src/database/migration/**/*.ts'],
     cli: {
-      "entitiesDir": "src/domains",
-      "migrationsDir": "src/database/migration"
-    }
-  }
-}
+      entitiesDir: 'src/domains',
+      migrationsDir: 'src/database/migration',
+    },
+  },
+};
 
-module.exports = databaseConfig[process.env.NODE_ENV || "development"]
+module.exports = databaseConfig[process.env.NODE_ENV || 'development'];

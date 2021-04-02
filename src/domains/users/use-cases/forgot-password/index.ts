@@ -7,8 +7,13 @@ import { ForgotPasswordUseCase } from './forgot-password.usecase';
 const databaseUserRepository = new DatabaseUserRepository();
 const smtpMailProvider = new SMTPMailProvider();
 
-const forgotPasswordUseCase = new ForgotPasswordUseCase(databaseUserRepository, smtpMailProvider);
+const forgotPasswordUseCase = new ForgotPasswordUseCase(
+  databaseUserRepository,
+  smtpMailProvider
+);
 
-const forgotPasswordController = new ForgotPasswordController(forgotPasswordUseCase);
+const forgotPasswordController = new ForgotPasswordController(
+  forgotPasswordUseCase
+);
 
 export { forgotPasswordUseCase, forgotPasswordController };

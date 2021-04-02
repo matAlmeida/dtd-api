@@ -7,7 +7,7 @@ export function generateToken(
   expiration: string | number = '7 days'
 ) {
   return jwt.sign(params, config.env.API_JWT_KEY, {
-    expiresIn: expiration
+    expiresIn: expiration,
   });
 }
 

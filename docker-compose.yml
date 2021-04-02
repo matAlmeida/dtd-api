@@ -3,7 +3,7 @@
 # docker-compose down
 # docker volume rm $(docker volume ls -q)
 
-version: "3.7"
+version: '3.7'
 
 services:
   db:
@@ -30,7 +30,7 @@ services:
 
   redis:
     image: redis:5.0.9-buster
-    command: ["redis-server", "--appendonly", "yes"]
+    command: ['redis-server', '--appendonly', 'yes']
     ports:
       - 6379:6379
     volumes:

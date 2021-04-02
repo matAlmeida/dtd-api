@@ -1,8 +1,8 @@
 import compression from 'compression';
 import cors from 'cors';
+import express from 'express';
 import helmet from 'helmet';
 import morgan from 'morgan';
-import express from 'express';
 import 'reflect-metadata';
 
 import routes from './routes';

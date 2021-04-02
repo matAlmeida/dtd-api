@@ -19,7 +19,7 @@ const userRepository = new DatabaseUserRepository();
 const testUser = {
   name: 'Matheus',
   email: 'reset-email@email.com',
-  password: 'senha123'
+  password: 'senha123',
 };
 
 beforeAll(async () => {
@@ -46,7 +46,7 @@ describe('Reset Password [Use Case]', () => {
       await resetPasswordUseCase.execute({
         email: `invalid-${testUser.email}`,
         password: testUser.password,
-        reset_token: 'reset_token'
+        reset_token: 'reset_token',
       });
     } catch (error) {
       expect(error).toBeInstanceOf(BadRequestError);
@@ -61,7 +61,7 @@ describe('Reset Password [Use Case]', () => {
       await resetPasswordUseCase.execute({
         email: testUser.email,
         password: testUser.password,
-        reset_token: 'reset_token'
+        reset_token: 'reset_token',
       });
     } catch (error) {
       expect(error).toBeInstanceOf(UnauthorizedError);
@@ -82,7 +82,7 @@ describe('Reset Password [Use Case]', () => {
       await resetPasswordUseCase.execute({
         email: testUser.email,
         password: testUser.password,
-        reset_token: createdUser.password_reset_token
+        reset_token: createdUser.password_reset_token,
       });
     } catch (error) {
       expect(error).toBeInstanceOf(UnauthorizedError);
@@ -100,7 +100,7 @@ describe('Reset Password [Use Case]', () => {
     await resetPasswordUseCase.execute({
       email: testUser.email,
       password: newPassword,
-      reset_token: createdUser.password_reset_token
+      reset_token: createdUser.password_reset_token,
     });
 
     const updatedUser = await userRepository.findByEmail(testUser.email);
@@ -118,12 +118,12 @@ describe('Reset Password [Use Case]', () => {
     await resetPasswordUseCase.execute({
       email: testUser.email,
       password: newPassword,
-      reset_token: createdUser.password_reset_token
+      reset_token: createdUser.password_reset_token,
     });
 
     const authenticatedUser = await authenticateUserUseCase.execute({
       email: testUser.email,
-      password: newPassword
+      password: newPassword,
     });
 
     expect(authenticatedUser).toBeTruthy();

@@ -1,9 +1,11 @@
-const { compilerOptions } = require('./tsconfig.json')
-const { pathsToModuleNameMapper } = require('ts-jest/utils')
+const { compilerOptions } = require('./tsconfig.json');
+const { pathsToModuleNameMapper } = require('ts-jest/utils');
 
 module.exports = {
   clearMocks: true,
-  moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, { prefix: '<rootDir>' }),
+  moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, {
+    prefix: '<rootDir>',
+  }),
   preset: 'ts-jest',
   collectCoverageFrom: [
     'src/domains/**/*.ts',
@@ -18,9 +20,9 @@ module.exports = {
     '/database/',
     '/config/',
     '/libs/',
-    '/models\/error/',
-    '/models\/usecase/',
-    '.*\.controller\.ts',
+    '/models/error/',
+    '/models/usecase/',
+    '.*.controller.ts',
   ],
   coverageThreshold: {
     global: {
@@ -29,11 +31,11 @@ module.exports = {
       lines: 70,
       statements: 70,
     },
-    "src/domains/**/use-cases/**/*.usecase.ts": {
+    'src/domains/**/use-cases/**/*.usecase.ts': {
       branches: 100,
       functions: 100,
       lines: 100,
       statements: 100,
-    }
+    },
   },
-}
+};

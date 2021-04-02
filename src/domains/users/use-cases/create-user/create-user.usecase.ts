@@ -10,9 +10,9 @@ import { ICreateUserRequestDTO } from './create-user.dto';
 
 const SALT_ROUNDS = 10;
 
-export class CreateUserUseCase implements
-  IBaseUseCase<ICreateUserRequestDTO, void> {
-  constructor(private usersRepository: IUsersRepository) { }
+export class CreateUserUseCase
+  implements IBaseUseCase<ICreateUserRequestDTO, void> {
+  constructor(private usersRepository: IUsersRepository) {}
 
   async execute(data: ICreateUserRequestDTO) {
     const user = await this.usersRepository.findByEmail(data.email);
@@ -27,7 +27,7 @@ export class CreateUserUseCase implements
     const newUser = new User({
       ...data,
       password: hashedPassword,
-      password_salt: passwordSalt
+      password_salt: passwordSalt,
     });
 
     await this.usersRepository.save(newUser);

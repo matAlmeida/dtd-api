@@ -6,7 +6,7 @@ const userData = {
   name: 'Matheus',
   email: 'email@email.com',
   password: 'senha123',
-  password_salt: 'salt'
+  password_salt: 'salt',
 };
 
 describe('User entity', () => {

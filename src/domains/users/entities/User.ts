@@ -9,7 +9,7 @@ export class User {
   @Column({
     primary: true,
     nullable: false,
-    type: 'uuid'
+    type: 'uuid',
   })
   public readonly id: string;
 
@@ -18,7 +18,7 @@ export class User {
 
   @Column({
     nullable: false,
-    unique: true
+    unique: true,
   })
   public email: string;
 
@@ -34,7 +34,7 @@ export class User {
   @Column({ nullable: true })
   public password_reset_expire?: Date;
 
-  @OneToMany(type => Team, team => team.user)
+  @OneToMany((type) => Team, (team) => team.user)
   public teams?: Team[];
 
   constructor(props: Omit<User, 'id'>, id?: string) {

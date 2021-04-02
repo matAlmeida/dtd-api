@@ -13,7 +13,7 @@ const userRepository = new DatabaseUserRepository();
 const testUser = {
   name: 'Matheus',
   email: 'create-email@email.com',
-  password: 'senha123'
+  password: 'senha123',
 };
 
 beforeAll(async () => {

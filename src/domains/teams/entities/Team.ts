@@ -8,7 +8,7 @@ export class Team {
   @Column({
     primary: true,
     nullable: false,
-    type: 'uuid'
+    type: 'uuid',
   })
   public readonly id: string;
 
@@ -18,9 +18,9 @@ export class Team {
   @Column({ nullable: true })
   public thumbnail?: string;
 
-  @ManyToOne(type => User, user => user.teams, {
+  @ManyToOne((type) => User, (user) => user.teams, {
     onDelete: 'CASCADE',
-    nullable: false
+    nullable: false,
   })
   public user: User;
 

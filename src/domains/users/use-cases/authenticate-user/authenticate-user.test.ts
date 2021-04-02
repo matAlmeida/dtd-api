@@ -11,7 +11,7 @@ import { authenticateUserUseCase } from './index';
 const testUser = {
   name: 'Matheus',
   email: 'authenticate-email@email.com',
-  password: 'senha123'
+  password: 'senha123',
 };
 
 beforeAll(async () => {
@@ -36,7 +36,7 @@ describe('Authenticate User [Use Case]', () => {
     try {
       await authenticateUserUseCase.execute({
         email: `invalid-${testUser.email}`,
-        password: testUser.password
+        password: testUser.password,
       });
     } catch (error) {
       expect(error).toBeInstanceOf(UnauthorizedError);
@@ -50,7 +50,7 @@ describe('Authenticate User [Use Case]', () => {
     try {
       await authenticateUserUseCase.execute({
         email: testUser.email,
-        password: `invalid-${testUser.password}`
+        password: `invalid-${testUser.password}`,
       });
     } catch (error) {
       expect(error).toBeInstanceOf(UnauthorizedError);
@@ -61,7 +61,7 @@ describe('Authenticate User [Use Case]', () => {
   test('should return authenticated user if valid credentials', async () => {
     const authenticatedUser = await authenticateUserUseCase.execute({
       email: testUser.email,
-      password: testUser.password
+      password: testUser.password,
     });
 
     expect(authenticatedUser).toHaveProperty('id');

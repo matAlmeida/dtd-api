@@ -15,7 +15,10 @@ export class DatabaseUserRepository implements IUsersRepository {
   }
 
   async all({ page, length }: Pagination) {
-    const users = await this.userRepository.find({ skip: page * length, take: length });
+    const users = await this.userRepository.find({
+      skip: page * length,
+      take: length,
+    });
 
     return users;
   }

@@ -18,7 +18,7 @@ const MockedEmail = mocked(Email, true);
 const testUser = {
   name: 'Matheus',
   email: 'forgot-email@email.com',
-  password: 'senha123'
+  password: 'senha123',
 };
 
 beforeAll(async () => {
@@ -43,7 +43,7 @@ describe('Forgot Password [Use Case]', () => {
 
     try {
       await forgotPasswordUseCase.execute({
-        email: `invalid-${testUser.email}`
+        email: `invalid-${testUser.email}`,
       });
     } catch (error) {
       expect(error).toBeInstanceOf(BadRequestError);
@@ -53,7 +53,7 @@ describe('Forgot Password [Use Case]', () => {
 
   test('should send mail to user if exists on database', async () => {
     await forgotPasswordUseCase.execute({
-      email: testUser.email
+      email: testUser.email,
     });
 
     const emailInstance = MockedEmail.mock.instances[0];
