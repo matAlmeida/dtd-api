@@ -12,7 +12,7 @@
     "test": "NODE_ENV=test jest ./src",
     "coverage": "NODE_ENV=test jest ./src --collectCoverage",
     "postinstall": "husky install",
-    "lint": "prettier --loglevel error --check src && eslint src/**/*.ts"
+    "lint": "prettier --check src && eslint src/**/*.{js,ts} --quiet"
   },
   "dependencies": {
     "@keenondrums/singleton": "^1.0.0",

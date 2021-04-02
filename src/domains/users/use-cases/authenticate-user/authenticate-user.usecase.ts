@@ -14,7 +14,7 @@ import {
 } from './authenticate-user.dto';
 
 export class AuthenticateUserUseCase
-implements
+  implements
     IBaseUseCase<IAuthenticateUserRequestDTO, IAuthenticateUserResponseDTO> {
   constructor(private usersRepository: IUsersRepository) {}
 

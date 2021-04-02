@@ -10,7 +10,7 @@ import { IResetPasswordRequestDTO } from './reset-password.dto';
 const SALT_ROUNDS = 10;
 
 export class ResetPasswordUseCase
-implements IBaseUseCase<IResetPasswordRequestDTO, void> {
+  implements IBaseUseCase<IResetPasswordRequestDTO, void> {
   constructor(private usersRepository: IUsersRepository) {}
 
   async execute(data: IResetPasswordRequestDTO) {

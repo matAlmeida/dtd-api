@@ -76,7 +76,10 @@ describe('Reset Password [Use Case]', () => {
 
     const now = new Date();
     now.setHours(now.getHours() - 1); // expired 1 hour ago
-    await userRepository.save({ ...createdUser, password_reset_expire: now });
+    await userRepository.save({
+      ...createdUser,
+      password_reset_expire: now,
+    });
 
     try {
       await resetPasswordUseCase.execute({

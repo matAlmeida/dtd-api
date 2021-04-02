@@ -5,7 +5,9 @@
     "jest": true
   },
   "extends": [
-    "standard"
+    "standard",
+    "prettier",
+    "plugin:prettier/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -18,22 +20,11 @@
     "prettier"
   ],
   "rules": {
-    "quotes": [
-      "error",
-      "single",
-      {
-        "avoidEscape": true
-      }
+    "prettier/prettier": [
+      "error"
     ],
     "no-useless-constructor": "off",
     "space-before-function-paren": "off",
-    "indent": [
-      "error",
-      2,
-      {
-        "SwitchCase": 2
-      }
-    ],
     "no-console": "off",
     "camelcase": "off",
     "class-methods-use-this": "off",
@@ -43,23 +34,9 @@
     "no-var": [
       "error"
     ],
-    "semi": [
-      "error",
-      "always"
-    ],
     "array-element-newline": [
       "error",
       "consistent"
-    ],
-    "comma-dangle": [
-      "error",
-      {
-        "arrays": "always-multiline",
-        "objects": "always-multiline",
-        "imports": "always-multiline",
-        "exports": "always-multiline",
-        "functions": "never"
-      }
     ],
     "no-nested-ternary": "off",
     "@typescript-eslint/no-unused-vars": [
