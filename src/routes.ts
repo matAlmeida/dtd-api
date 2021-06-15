@@ -7,7 +7,7 @@ export default async function (app: Application) {
   // If is dev ".ts" or built ".js"
   const currentFileExtension = __filename.split('.')[1];
 
-  await new Promise((resolve, reject) => {
+  await new Promise<void>((resolve, reject) => {
     const searchFolder = `${__dirname}/domains/**/routes.${currentFileExtension}`;
 
     glob(searchFolder, (error, files) => {
@@ -18,7 +18,7 @@ export default async function (app: Application) {
       files.forEach((file) => {
         const { router, prefix } = require(file);
 
-        app.use(`${config.api.base_path}/${prefix}`, router);
+        app.use(`${config.api.v1.base_path}/${prefix}`, router);
       });
 
       resolve();

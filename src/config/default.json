@@ -1,7 +1,9 @@
 {
   "api": {
-    "base_path": "/api/v1",
-    "swagger_path": "/api/v1/docs",
+    "v1": {
+      "base_path": "/api/v1",
+      "swagger_path": "/api/v1/docs"
+    },
     "pagination_size": 20,
     "max_page_size": 100,
     "reset_token_expiration_hours": 1
