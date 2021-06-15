@@ -13,6 +13,7 @@ To install the database using `docker-compose` make sure to have `docker` and `d
 ```sh
 $ docker-compose build
 $ docker-compose up
+$ yarn db:migrate
 ```
 
 ## Enviroment Variables
