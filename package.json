@@ -1,5 +1,5 @@
 {
-  "name": "ilab-2",
+  "name": "dtd",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -15,6 +15,7 @@
     "lint": "prettier --check src && eslint src/**/*.{js,ts} --quiet"
   },
   "dependencies": {
+    "@brazilian-utils/brazilian-utils": "^1.0.0-rc.12",
     "@keenondrums/singleton": "^1.0.0",
     "bcrypt": "^5.0.0",
     "compression": "^1.7.4",
