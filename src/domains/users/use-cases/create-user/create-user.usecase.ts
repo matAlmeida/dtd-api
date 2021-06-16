@@ -1,3 +1,4 @@
+import { isValidCPF, onlyNumbers } from '@brazilian-utils/brazilian-utils';
 import bcrypt from 'bcrypt';
 
 import { BadRequestError } from '@models/error';
@@ -21,11 +22,16 @@ export class CreateUserUseCase
       throw new BadRequestError('User already exists.');
     }
 
+    if (!isValidCPF(data.cpf)) {
+      throw new BadRequestError('CPF not valid.');
+    }
+
     const passwordSalt = await bcrypt.genSalt(SALT_ROUNDS);
     const hashedPassword = await bcrypt.hash(data.password, passwordSalt);
 
     const newUser = new User({
       ...data,
+      cpf: onlyNumbers(data.cpf),
       password: hashedPassword,
       password_salt: passwordSalt,
     });

@@ -3,6 +3,7 @@ import { uuid } from 'uuidv4';
 
 @Entity('user')
 @Index('idx_user_email', ['email'], { unique: true })
+@Index('idx_user_cpf', ['cpf'], { unique: true })
 export class User {
   @Column({
     primary: true,
@@ -19,6 +20,12 @@ export class User {
     unique: true,
   })
   public email: string;
+
+  @Column({
+    nullable: false,
+    unique: true,
+  })
+  public cpf: string;
 
   @Column({ nullable: false })
   public password: string;

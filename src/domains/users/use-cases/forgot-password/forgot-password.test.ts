@@ -19,6 +19,7 @@ const testUser = {
   name: 'Matheus',
   email: 'forgot-email@email.com',
   password: 'senha123',
+  cpf: '621.152.780-20',
 };
 
 beforeAll(async () => {
